@@ -1,4 +1,4 @@
-package array;
+package arrays;
 
 /*
  Given a sorted 2-D array (M x N) containing integers with the following properties:    

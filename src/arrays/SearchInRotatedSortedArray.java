@@ -1,4 +1,4 @@
-package array;
+package arrays;
 
 /*
  * Follow up for "Search in Rotated Sorted Array":

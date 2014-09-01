@@ -1,18 +1,17 @@
 package thread;
 
-import thread.DoubleCheckedLockedSingleton.Creator;
-
 public class ProducerConsumerBlockingQueue {
 	int n;
 	boolean valueSet = false;
 
 	synchronized int get() {
-		if (!valueSet)
+		if (!valueSet) {
 			try {
 				wait();
 			} catch (InterruptedException e) {
 				System.out.println("InterruptedException caught");
 			}
+		}
 		System.out.println("Got: " + n);
 		valueSet = false;
 		notify();
@@ -20,12 +19,13 @@ public class ProducerConsumerBlockingQueue {
 	}
 
 	synchronized void put(int n) {
-		if (valueSet)
+		if (valueSet) {
 			try {
 				wait();
 			} catch (InterruptedException e) {
 				System.out.println("InterruptedException caught");
 			}
+		}
 		this.n = n;
 		valueSet = true;
 		System.out.println("Put: " + n);
@@ -40,6 +40,7 @@ public class ProducerConsumerBlockingQueue {
 			new Thread(this, "Producer").start();
 		}
 
+		@Override
 		public void run() {
 			int i = 0;
 			while (true) {
@@ -56,6 +57,7 @@ public class ProducerConsumerBlockingQueue {
 			new Thread(this, "Consumer").start();
 		}
 
+		@Override
 		public void run() {
 			while (true) {
 				q.get();

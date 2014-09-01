@@ -2,7 +2,6 @@ package string;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 import utils.PrintUtils;
 
@@ -22,16 +21,18 @@ public class SubstringWithConcatenationOfAllWords {
 	// Time Limit Exceeded for large data in online judge
 	public static ArrayList<Integer> findSubstring(String s, String[] l) {
 		ArrayList<Integer> indices = new ArrayList<Integer>();
-		if (s.length() == 0 || l.length == 0 || l[0].length() == 0)
+		if (s.length() == 0 || l.length == 0 || l[0].length() == 0) {
 			return indices;
+		}
 		int wordLength = l[0].length();
 		int wordCount = l.length;
 		HashMap<String, Integer> words = new HashMap<String, Integer>();
 		for (String word : l) {
-			if (words.containsKey(word))
+			if (words.containsKey(word)) {
 				words.put(word, words.get(word) + 1);
-			else
+			} else {
 				words.put(word, 1);
+			}
 		}
 		for (int offset = 0; offset < s.length(); offset += 1) {
 			HashMap<String, Integer> found = new HashMap<String, Integer>();
@@ -45,9 +46,9 @@ public class SubstringWithConcatenationOfAllWords {
 				}
 				String word = s.substring(start, end);
 				if (words.containsKey(word)) {
-					if (!found.containsKey(word))
+					if (!found.containsKey(word)) {
 						found.put(word, 1);
-					else {
+					} else {
 						int count = found.get(word);
 						if (count == words.get(word)) {
 							match = false;
@@ -60,8 +61,9 @@ public class SubstringWithConcatenationOfAllWords {
 					break;
 				}
 			}
-			if (match)
+			if (match) {
 				indices.add(offset);
+			}
 		}
 		return indices;
 	}

@@ -1,8 +1,6 @@
 package arrays;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 import utils.CreateUtils;
 import utils.PrintUtils;
@@ -10,8 +8,9 @@ import utils.PrintUtils;
 public class ThreeSumAddingToGivenTarget {
 
 	public static void findTuples(int[] a, int target) {
-		if (a.length < 3)
+		if (a.length < 3) {
 			return;
+		}
 		Arrays.sort(a);
 		for (int first = 0; first < a.length - 2; first++) {
 			int second = first + 1;

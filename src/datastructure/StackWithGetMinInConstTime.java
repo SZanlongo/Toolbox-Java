@@ -4,6 +4,7 @@ import java.util.Stack;
 
 import utils.CreateUtils;
 
+@SuppressWarnings("serial")
 public class StackWithGetMinInConstTime<T extends Comparable<T>> extends
 Stack<T> {
 	Stack<T> mins;

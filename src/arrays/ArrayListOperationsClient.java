@@ -1,8 +1,10 @@
 package arrays;
 
-import java.util.Random;
 import java.util.ArrayList;
+import java.util.Random;
 
+//http://users.cis.fiu.edu/~pestaina/ListOps.java
+@SuppressWarnings({ "rawtypes" })
 public class ArrayListOperationsClient {
 
 	public static void main(String[] args) {
@@ -30,7 +32,8 @@ public class ArrayListOperationsClient {
 		ArrayListOperations.insertionSort(listTwo);
 		System.out.println("TWO: " + listTwo);
 
-		ArrayList<Comparable> both = ArrayListOperations.merge(listOne, listTwo);
+		ArrayList<Comparable> both = ArrayListOperations
+				.merge(listOne, listTwo);
 		System.out.println("ALL: " + both);
 	}
 }

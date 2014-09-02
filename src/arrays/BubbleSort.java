@@ -3,6 +3,8 @@ package arrays;
 import java.util.ArrayList;
 import java.util.Random;
 
+//https://users.cs.fiu.edu/~pestaina/SimpleSort.java
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class BubbleSort {
 	public static void main(String[] args) {
 
@@ -19,7 +21,7 @@ public class BubbleSort {
 			bubble(list);
 
 			// Remove the last (largest) element
-			Comparable last = list.remove(list.size() - 1);
+			Comparable<?> last = list.remove(list.size() - 1);
 
 			// Recursively, sort the shortened list
 			bubbleSort(list);

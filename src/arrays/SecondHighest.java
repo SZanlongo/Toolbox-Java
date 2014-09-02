@@ -1,5 +1,6 @@
 package arrays;
 
+//http://programmingworldc.blogspot.com/2014/04/write-program-to-find-second-highest.html
 public class SecondHighest {
 
 	/**

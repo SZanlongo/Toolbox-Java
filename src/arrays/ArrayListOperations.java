@@ -2,6 +2,8 @@ package arrays;
 
 import java.util.ArrayList;
 
+//http://users.cis.fiu.edu/~pestaina/ListOps.java
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class ArrayListOperations {
 
 	public static void insert(Comparable item, ArrayList<Comparable> list) {
@@ -37,12 +39,13 @@ public class ArrayListOperations {
 		return foundIt;
 	}
 
-	public static boolean binarySearch(ArrayList<Comparable> list, Comparable item) {
+	public static boolean binarySearch(ArrayList<Comparable> list,
+			Comparable item) {
 		return binarySearch(list, item, 0, list.size() - 1);
 	}
 
-	private static boolean binarySearch(ArrayList<Comparable> list, Comparable item, int loIndex,
-			int hiIndex) {
+	private static boolean binarySearch(ArrayList<Comparable> list,
+			Comparable item, int loIndex, int hiIndex) {
 		if (loIndex > hiIndex) {
 			return false;
 		}
@@ -64,7 +67,8 @@ public class ArrayListOperations {
 		return merger(copy(list1), copy(list2));
 	}
 
-	private static ArrayList<Comparable> merger(ArrayList<Comparable> one, ArrayList<Comparable> two) {
+	private static ArrayList<Comparable> merger(ArrayList<Comparable> one,
+			ArrayList<Comparable> two) {
 		if (one.isEmpty()) {
 			return two;
 		}

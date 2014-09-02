@@ -1,5 +1,6 @@
 package arrays;
 
+//http://www.xentrik.net/snippets/info/dynamic_array_tools-696.html
 public class DynamicArray {
 
 	public static void main(String[] args) {

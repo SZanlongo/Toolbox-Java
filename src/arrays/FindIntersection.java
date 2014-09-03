@@ -3,6 +3,8 @@ package arrays;
 import java.util.ArrayList;
 import java.util.Random;
 
+//http://users.cis.fiu.edu/~pestaina/SimpleSortClient.java
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class FindIntersection {
 	public static void main(String[] args) {
 

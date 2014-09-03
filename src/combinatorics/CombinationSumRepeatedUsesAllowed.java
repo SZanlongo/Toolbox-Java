@@ -8,17 +8,17 @@ import utils.CreateUtils;
 import utils.PrintUtils;
 
 /*
- * Given a set of candidate numbers (C) and a target number (T), 
+ * Given a set of candidate numbers (C) and a target number (T),
  * find all unique combinations in C where the candidate numbers sums to T.
  * The same repeated number may be chosen from C unlimited number of times.
  * Note:
  * All numbers (including target) will be positive integers.
- * Elements in a combination (a1, a2, É ,ak) must be in non-descending order. 
+ * Elements in a combination (a1, a2, É ,ak) must be in non-descending order.
  * The solution set must not contain duplicate combinations.
- * For example, given candidate set 2,3,6,7 and target 7, 
- * A solution set is: 
- * [7] 
- * [2, 2, 3] 
+ * For example, given candidate set 2,3,6,7 and target 7,
+ * A solution set is:
+ * [7]
+ * [2, 2, 3]
  */
 public class CombinationSumRepeatedUsesAllowed {
 
@@ -34,6 +34,7 @@ public class CombinationSumRepeatedUsesAllowed {
 			ArrayList<ArrayList<Integer>> ls, ArrayList<Integer> l,
 			HashSet<String> outputs) {
 		if (target == 0) {
+			@SuppressWarnings("unchecked")
 			ArrayList<Integer> l2 = (ArrayList<Integer>) l.clone();
 			Collections.sort(l2);
 			StringBuffer output = new StringBuffer("");
@@ -46,10 +47,10 @@ public class CombinationSumRepeatedUsesAllowed {
 			}
 			return;
 		}
-		for (int i = 0; i < candidates.length; i++) {
-			if (target >= candidates[i]) {
-				l.add(candidates[i]);
-				combinationSumRecursive(candidates, target - candidates[i], ls,
+		for (int candidate : candidates) {
+			if (target >= candidate) {
+				l.add(candidate);
+				combinationSumRecursive(candidates, target - candidate, ls,
 						l, outputs);
 				l.remove(l.size() - 1);
 			}
@@ -61,8 +62,9 @@ public class CombinationSumRepeatedUsesAllowed {
 		int target = CreateUtils.randNonNegInt(40);
 		System.out.println("target: " + target);
 		ArrayList<ArrayList<Integer>> ls = combinationSum(candidates, target);
-		for (ArrayList<Integer> l : ls)
+		for (ArrayList<Integer> l : ls) {
 			PrintUtils.printList(l);
+		}
 	}
 
 }

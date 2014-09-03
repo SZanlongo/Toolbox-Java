@@ -2,6 +2,7 @@ package arrays;
 
 import java.util.Random;
 
+//http://users.cis.fiu.edu/~pestaina/QuickListClient.java
 public class QuickListClient {
 
 	public static void main(String[] args) {

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
+//http://www.xentrik.net/snippets/info/dynamic_array_tools-696.html
+@SuppressWarnings("serial")
 public class CustomList extends ArrayList<Integer> {
 
 	// SOLUTION 1

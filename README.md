@@ -2,8 +2,10 @@
 
 Java Toolbox -  a collection of small, useful snippets and examples.
 
+Mostly consists of various examples found online, or that I thought was worth writing.
+
 ### Sources ###
-Builds on the examples provided in: [code-interviews](https://code.google.com/p/code-interviews/).
+Forked from: [code-interviews](https://code.google.com/p/code-interviews/).
 
 ### Contents ###
 

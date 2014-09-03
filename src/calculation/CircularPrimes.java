@@ -10,6 +10,7 @@ import java.util.ArrayList;
  How many circular primes are there below one million?
  */
 
+//https://github.com/jrivera777/ProjectEulerProblems
 public class CircularPrimes {
 	public static void main(String[] args) {
 		int circularPrimes = 0;
@@ -23,8 +24,9 @@ public class CircularPrimes {
 					break;
 				}
 			}
-			if (allPrime)
+			if (allPrime) {
 				circularPrimes++;
+			}
 		}
 		System.out.println(circularPrimes);
 	}

@@ -1,5 +1,6 @@
 package calculation;
 
+//https://github.com/jrivera777/ProjectEulerProblems
 public class PythogreanTriplets {
 
 	public static boolean isEven(double n) {
@@ -19,7 +20,8 @@ public class PythogreanTriplets {
 			b = 2 * n * (n + 1);
 			c = 2 * n * (n + 1) + 1;
 		}
-		if (a + b + c == 1000)
+		if (a + b + c == 1000) {
 			System.out.println("Result = " + a * b * c);
+		}
 	}
 }

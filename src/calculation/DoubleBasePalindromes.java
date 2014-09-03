@@ -10,6 +10,7 @@ import java.math.BigInteger;
  (Please note that the palindromic number, in either base, may not include leading zeros.)
  */
 
+//https://github.com/jrivera777/ProjectEulerProblems
 public class DoubleBasePalindromes {
 	// Find the sum of all numbers, less than one million, which are palindromic
 	// in base 10 and base 2.
@@ -20,8 +21,9 @@ public class DoubleBasePalindromes {
 		for (int i = 1; i <= 1000000; i++) {
 			String str = String.valueOf(i);
 
-			if (isPalindrome(str) && isPalindrome(toBinaryString(i)))
+			if (isPalindrome(str) && isPalindrome(toBinaryString(i))) {
 				val = val.add(BigInteger.valueOf(Long.parseLong(str)));
+			}
 		}
 		System.out.println(val);
 	}
@@ -38,8 +40,9 @@ public class DoubleBasePalindromes {
 	}
 
 	private static boolean isPalindrome(String str) {
-		if (str.length() == 1)
+		if (str.length() == 1) {
 			return true;
+		}
 
 		int front = 0;
 		int end = str.length() - 1;
@@ -49,8 +52,9 @@ public class DoubleBasePalindromes {
 				result = true;
 				break;
 			}
-			if (str.charAt(front) != str.charAt(end))
+			if (str.charAt(front) != str.charAt(end)) {
 				break;
+			}
 
 			front++;
 			end--;

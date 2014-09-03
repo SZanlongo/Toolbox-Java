@@ -1,5 +1,6 @@
 package calculation;
 
+//https://github.com/jrivera777/ProjectEulerProblems
 public class SumOfMultiples {
 	public static void main(String[] args) {
 		int[] arr = { 3, 5 };

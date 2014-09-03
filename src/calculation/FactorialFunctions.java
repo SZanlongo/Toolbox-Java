@@ -2,6 +2,7 @@ package calculation;
 
 import java.math.BigInteger;
 
+//https://github.com/jrivera777/ProjectEulerProblems
 public class FactorialFunctions {
 	public static void main(String[] args) {
 		System.out.println(factorialRecursiveProduct(100));
@@ -32,8 +33,9 @@ public class FactorialFunctions {
 		String toRead = String.valueOf(val);
 
 		int sum = 0;
-		for (int i = 0; i < toRead.length(); i++)
+		for (int i = 0; i < toRead.length(); i++) {
 			sum += Integer.parseInt(String.valueOf(toRead.charAt(i)));
+		}
 
 		return sum;
 	}

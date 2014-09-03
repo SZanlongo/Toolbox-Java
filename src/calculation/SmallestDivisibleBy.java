@@ -1,5 +1,6 @@
 package calculation;
 
+//https://github.com/jrivera777/ProjectEulerProblems
 public class SmallestDivisibleBy {
 	public static void main(String[] args) {
 		boolean divByAll = false;

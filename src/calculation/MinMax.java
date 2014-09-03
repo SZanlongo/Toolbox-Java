@@ -1,5 +1,6 @@
 package calculation;
 
+//https://github.com/jrivera777/ProjectEulerProblems
 public class MinMax {
 	public static void main(String[] args) {
 		int min = 0;
@@ -8,22 +9,24 @@ public class MinMax {
 
 		int[] arr = { -3, 4, -3 };
 
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] > max)
-				max = arr[i];
-			if (arr[i] < min)
-				min = arr[i];
+		for (int element : arr) {
+			if (element > max) {
+				max = element;
+			}
+			if (element < min) {
+				min = element;
+			}
 		}
 
 		int[] neg = new int[Math.abs(min) + 1];
 		int[] pos = new int[max + 1];
 
 		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] < 0)
+			if (arr[i] < 0) {
 				neg[Math.abs(arr[i])]++;
-			else if (arr[i] > 0)
+			} else if (arr[i] > 0) {
 				pos[Math.abs(arr[i])]++;
-			else {
+			} else {
 				triplet = true;
 			}
 		}
@@ -47,9 +50,10 @@ public class MinMax {
 			}
 		}
 
-		if (triplet)
+		if (triplet) {
 			System.out.println("Found Triplet!");
-		else
+		} else {
 			System.out.println("No Triplet found.");
+		}
 	}
 }

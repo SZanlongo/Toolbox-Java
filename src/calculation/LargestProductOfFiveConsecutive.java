@@ -1,5 +1,6 @@
 package calculation;
 
+//https://github.com/jrivera777/ProjectEulerProblems
 public class LargestProductOfFiveConsecutive {
 	public static final String NUMBERS = "73167176531330624919225119674426574742355349194934"
 			+ "96983520312774506326239578318016984801869478851843"
@@ -34,8 +35,7 @@ public class LargestProductOfFiveConsecutive {
 			int prod = a * b * c * d * e;
 			if (largest < prod) {
 				largest = prod;
-				// System.out.println(a + " " + b + " " + c + " " + d + " " +
-				// e);
+				System.out.println(a + " " + b + " " + c + " " + d + " " + e);
 			}
 		}
 		System.out.println(largest);

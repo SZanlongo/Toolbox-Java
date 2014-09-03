@@ -1,5 +1,6 @@
 package calculation;
 
+//https://github.com/jrivera777/ProjectEulerProblems
 public class SumOfSquaresVsSquareOfSum {
 	public static void main(String[] args) {
 		long sqOfSum = 0;

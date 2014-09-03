@@ -3,6 +3,7 @@ package calculation;
 import java.math.BigInteger;
 import java.util.ArrayList;
 
+//https://github.com/jrivera777/ProjectEulerProblems
 public class LargestPrimeFactor {
 	public static boolean isPrimeInteger(int n) {
 		for (int i = 2; i <= (int) Math.floor(Math.sqrt(n)); i++) {
@@ -25,12 +26,14 @@ public class LargestPrimeFactor {
 
 	public static boolean isPrimeBigInteger(BigInteger n) {
 		BigInteger root = squareRootN(n);
-		if (root.compareTo(BigInteger.ZERO) == 0)
+		if (root.compareTo(BigInteger.ZERO) == 0) {
 			return false;
+		}
 		for (long i = 2; i <= Math.floor(root.longValue()); i++) {
 			long val = n.remainder(new BigInteger((Long.toString(i)))).longValue();
-			if (val == 0)
+			if (val == 0) {
 				return false;
+			}
 		}
 		return true;
 	}
@@ -39,8 +42,9 @@ public class LargestPrimeFactor {
 	public static BigInteger squareRootN(BigInteger N) {
 
 		BigInteger G = new BigInteger((N.shiftRight((N.bitLength() + 1) / 2)).toString());
-		if (G.compareTo(BigInteger.ZERO) == 0)
+		if (G.compareTo(BigInteger.ZERO) == 0) {
 			return BigInteger.ZERO;
+		}
 		BigInteger LastG = null;
 		BigInteger One = new BigInteger("1");
 		while (true) {
@@ -49,16 +53,21 @@ public class LargestPrimeFactor {
 
 			int i = G.compareTo(LastG);
 
-			if (i == 0)
+			if (i == 0) {
 				return G;
+			}
 			if (i < 0) {
-				if (LastG.subtract(G).compareTo(One) == 0)
-					if (G.multiply(G).compareTo(N) < 0 && LastG.multiply(LastG).compareTo(N) > 0)
+				if (LastG.subtract(G).compareTo(One) == 0) {
+					if (G.multiply(G).compareTo(N) < 0 && LastG.multiply(LastG).compareTo(N) > 0) {
 						return G;
+					}
+				}
 			} else {
-				if (G.subtract(LastG).compareTo(One) == 0)
-					if (LastG.multiply(LastG).compareTo(N) < 0 && G.multiply(G).compareTo(N) > 0)
+				if (G.subtract(LastG).compareTo(One) == 0) {
+					if (LastG.multiply(LastG).compareTo(N) < 0 && G.multiply(G).compareTo(N) > 0) {
 						return LastG;
+					}
+				}
 			}
 		}
 	}
@@ -79,12 +88,14 @@ public class LargestPrimeFactor {
 		return primes.get(primes.size() - 1);
 	}
 
+	@SuppressWarnings("unused")
 	private static BigInteger findLargestPrimeFactor(BigInteger n) {
 		BigInteger i = new BigInteger("2");
 		BigInteger answer = n;
 		while (i.compareTo(answer) < 0) {
-			if (answer.remainder(i).compareTo(n.ZERO) == 0)
+			if (answer.remainder(i).compareTo(BigInteger.ZERO) == 0) {
 				answer = answer.divide(i);
+			}
 
 			i = i.add(BigInteger.ONE);
 		}
@@ -108,9 +119,11 @@ public class LargestPrimeFactor {
 
 	public static long sumPrimesBelowTwoMil() {
 		long sum = 0;
-		for (long i = 2; i <= 2000000; i++)
-			if (isPrimeLong(i))
+		for (long i = 2; i <= 2000000; i++) {
+			if (isPrimeLong(i)) {
 				sum += i;
+			}
+		}
 		return sum;
 	}
 

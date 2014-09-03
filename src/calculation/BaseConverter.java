@@ -2,6 +2,7 @@ package calculation;
 
 import java.util.ArrayList;
 
+//http://hawkee.com/snippet/9495/
 public class BaseConverter {
 
 	private int inBase;
@@ -37,27 +38,27 @@ public class BaseConverter {
 			switch (numString.charAt(currentCharIndex)) {
 			case 'a':
 			case 'A':
-				numReversed[arrayIndex] = ((int) 'A') - 55;
+				numReversed[arrayIndex] = ('A') - 55;
 				break;
 			case 'b':
 			case 'B':
-				numReversed[arrayIndex] = ((int) 'B') - 55;
+				numReversed[arrayIndex] = ('B') - 55;
 				break;
 			case 'c':
 			case 'C':
-				numReversed[arrayIndex] = ((int) 'C') - 55;
+				numReversed[arrayIndex] = ('C') - 55;
 				break;
 			case 'd':
 			case 'D':
-				numReversed[arrayIndex] = ((int) 'D') - 55;
+				numReversed[arrayIndex] = ('D') - 55;
 				break;
 			case 'e':
 			case 'E':
-				numReversed[arrayIndex] = ((int) 'E') - 55;
+				numReversed[arrayIndex] = ('E') - 55;
 				break;
 			case 'f':
 			case 'F':
-				numReversed[arrayIndex] = ((int) 'F') - 55;
+				numReversed[arrayIndex] = ('F') - 55;
 				break;
 			default:
 				numReversed[arrayIndex] = Integer.parseInt(Character.toString(numString
@@ -69,10 +70,12 @@ public class BaseConverter {
 			numReversed[arrayIndex] *= Math.pow(inBase, arrayIndex);
 			arrayIndex++;
 		}
-		for (int b = 0; b < numReversed.length; b++)
-			decimalValue += numReversed[b];
-		if (outBase == 10)
+		for (int element : numReversed) {
+			decimalValue += element;
+		}
+		if (outBase == 10) {
 			return Integer.toString(decimalValue);
+		}
 		ArrayList<Integer> nums = new ArrayList<Integer>();
 		while (decimalValue != 0) {
 			nums.add(decimalValue % outBase);

@@ -12,15 +12,15 @@ public class PowerDigitSum {
 
 	public static void main(String[] args) {
 		BigInteger val = BigInteger.ONE;
-		int power = 1000;
 		int sum = 0;
 
 		val = TWO.pow(1000);
 
 		char[] chars = val.toString().toCharArray();
 
-		for (char c : chars)
+		for (char c : chars) {
 			sum += Integer.parseInt(String.valueOf(c));
+		}
 		System.out.println(sum);
 	}
 }

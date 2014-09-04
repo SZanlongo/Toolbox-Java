@@ -1,4 +1,4 @@
-package dp;
+package dynamicProgramming;
 
 import java.util.Iterator;
 import java.util.LinkedList;

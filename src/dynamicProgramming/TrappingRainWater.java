@@ -1,4 +1,4 @@
-package dp;
+package dynamicProgramming;
 
 /*
  * Given n non-negative integers representing an elevation map 

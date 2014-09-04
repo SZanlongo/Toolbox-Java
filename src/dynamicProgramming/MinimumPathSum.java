@@ -1,4 +1,4 @@
-package dp;
+package dynamicProgramming;
 
 /*
  * Given a m x n grid filled with non-negative numbers, 

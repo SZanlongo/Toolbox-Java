@@ -1,4 +1,4 @@
-package dp;
+package dynamicProgramming;
 
 /*
  * Find the contiguous subarray within an array 

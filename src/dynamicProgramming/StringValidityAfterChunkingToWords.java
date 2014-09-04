@@ -1,4 +1,4 @@
-package dp;
+package dynamicProgramming;
 
 /*
  * Given a dictionary of words and a string with all spaces removed, return whether the string is composed of valid words

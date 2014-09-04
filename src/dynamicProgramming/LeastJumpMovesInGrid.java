@@ -1,4 +1,4 @@
-package dp;
+package dynamicProgramming;
 
 import utils.CreateUtils;
 

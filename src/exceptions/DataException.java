@@ -1,5 +1,6 @@
 package exceptions;
 
+@SuppressWarnings("serial")
 public class DataException extends RuntimeException {
 
 	public DataException() {

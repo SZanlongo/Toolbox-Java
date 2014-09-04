@@ -1,8 +1,9 @@
 package exceptions;
 
-import java.io.*;
-import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class DataSetTest {
 	public static void main(String[] args) throws IOException {
@@ -20,8 +21,9 @@ public class DataSetTest {
 				ArrayList<Double> data = reader.readFile(fileName);
 
 				double sum = 0.0;
-				for (double item : data)
+				for (double item : data) {
 					sum += item;
+				}
 				// System.out.println(data.length + " Items.  Sum: " + sum);
 				System.out.println(data.size() + " Items.  Sum: " + sum);
 
@@ -31,6 +33,7 @@ public class DataSetTest {
 			} catch (DataException exception) {
 				System.out.println("Data Error > " + exception.getMessage());
 			}
+			keys.close();
 		}
 	}
 }

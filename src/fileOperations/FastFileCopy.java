@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 
 public class FastFileCopy {
+	@SuppressWarnings("resource")
 	public static void fileCopy(File in, File out) throws IOException {
 		FileChannel inChannel = new FileInputStream(in).getChannel();
 		FileChannel outChannel = new FileOutputStream(out).getChannel();
@@ -19,7 +20,8 @@ public class FastFileCopy {
 			long size = inChannel.size();
 			long position = 0;
 			while (position < size) {
-				position += inChannel.transferTo(position, maxCount, outChannel);
+				position += inChannel
+						.transferTo(position, maxCount, outChannel);
 			}
 		} finally {
 			if (inChannel != null) {
@@ -29,5 +31,7 @@ public class FastFileCopy {
 				outChannel.close();
 			}
 		}
+		inChannel.close();
+		outChannel.close();
 	}
 }

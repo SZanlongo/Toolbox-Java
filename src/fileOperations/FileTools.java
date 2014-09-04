@@ -1,6 +1,11 @@
 package fileOperations;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.InputStream;
 
 public class FileTools {
 
@@ -57,6 +62,7 @@ public class FileTools {
 		return out;
 	}
 
+	@SuppressWarnings("unused")
 	protected void execute() {
 		if (file.canExecute()) {
 			try {

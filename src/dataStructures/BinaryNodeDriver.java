@@ -26,23 +26,23 @@ public class BinaryNodeDriver {
 		System.out.println("null <---- Ann ----> null");
 		System.out.println("null <---- Zoila ----> null");
 		System.out.println("The root is Rose.");
-		BinaryNode<String> n16 = new BinaryNode("George", null, null);
-		BinaryNode<String> n15 = new BinaryNode("Flor", null, null);
-		BinaryNode<String> n14 = new BinaryNode("Bertha", n16, null);
-		BinaryNode<String> n13 = new BinaryNode("Larry", null, null);
-		BinaryNode<String> n12 = new BinaryNode("Mary", null, n15);
-		BinaryNode<String> n11 = new BinaryNode("Ann", null, null);
-		BinaryNode<String> n10 = new BinaryNode("Faith", null, null);
-		BinaryNode<String> n9 = new BinaryNode("Zoila", null, null);
-		BinaryNode<String> n8 = new BinaryNode("Dan", n13, n14);
-		BinaryNode<String> n7 = new BinaryNode("John", n12, null);
-		BinaryNode<String> n6 = new BinaryNode("Karen", n11, null);
-		BinaryNode<String> n5 = new BinaryNode("Rich", null, n10);
-		BinaryNode<String> n4 = new BinaryNode("Jack", null, n9);
-		BinaryNode<String> n3 = new BinaryNode("Sue", n7, n8);
-		BinaryNode<String> n2 = new BinaryNode("Bill", n5, n6);
-		BinaryNode<String> n1 = new BinaryNode("Mark", n3, n4);
-		BinaryNode<String> n0 = new BinaryNode("Rose", n1, n2);
+		BinaryNode<String> n16 = new BinaryNode<String>("George", null, null);
+		BinaryNode<String> n15 = new BinaryNode<String>("Flor", null, null);
+		BinaryNode<String> n14 = new BinaryNode<String>("Bertha", n16, null);
+		BinaryNode<String> n13 = new BinaryNode<String>("Larry", null, null);
+		BinaryNode<String> n12 = new BinaryNode<String>("Mary", null, n15);
+		BinaryNode<String> n11 = new BinaryNode<String>("Ann", null, null);
+		BinaryNode<String> n10 = new BinaryNode<String>("Faith", null, null);
+		BinaryNode<String> n9 = new BinaryNode<String>("Zoila", null, null);
+		BinaryNode<String> n8 = new BinaryNode<String>("Dan", n13, n14);
+		BinaryNode<String> n7 = new BinaryNode<String>("John", n12, null);
+		BinaryNode<String> n6 = new BinaryNode<String>("Karen", n11, null);
+		BinaryNode<String> n5 = new BinaryNode<String>("Rich", null, n10);
+		BinaryNode<String> n4 = new BinaryNode<String>("Jack", null, n9);
+		BinaryNode<String> n3 = new BinaryNode<String>("Sue", n7, n8);
+		BinaryNode<String> n2 = new BinaryNode<String>("Bill", n5, n6);
+		BinaryNode<String> n1 = new BinaryNode<String>("Mark", n3, n4);
+		BinaryNode<String> n0 = new BinaryNode<String>("Rose", n1, n2);
 
 		// test the traversals
 		System.out.println("\nThe tree in iterative post order is: ");
@@ -58,9 +58,12 @@ public class BinaryNodeDriver {
 		n0.printInOrder();
 
 		// test the 2 methods that create trees
-		String[] pre = { "Bill", "Mark", "Mary", "Sue", "Ann", "John", "Flor", "Peter", "Zoila" };
-		String[] in = { "Mary", "Sue", "Mark", "Bill", "John", "Flor", "Ann", "Zoila", "Peter" };
-		String[] post = { "Sue", "Mary", "Mark", "Flor", "John", "Zoila", "Peter", "Ann", "Bill" };
+		String[] pre = { "Bill", "Mark", "Mary", "Sue", "Ann", "John", "Flor",
+				"Peter", "Zoila" };
+		String[] in = { "Mary", "Sue", "Mark", "Bill", "John", "Flor", "Ann",
+				"Zoila", "Peter" };
+		String[] post = { "Sue", "Mary", "Mark", "Flor", "John", "Zoila",
+				"Peter", "Ann", "Bill" };
 		System.out.println("\nTesting prePlusIn:\nThe preorder is : ");
 		for (String n : pre) {
 			System.out.println(n);

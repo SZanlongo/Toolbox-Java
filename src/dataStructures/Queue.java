@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class Queue {
 
-	private LinkedList<Object> store;
+	private final LinkedList<Object> store;
 
 	public Queue() {
 		this.store = new LinkedList<Object>();
@@ -22,6 +22,7 @@ public class Queue {
 		this.store.addLast(item);
 	}
 
+	@SuppressWarnings("unused")
 	private Object deQueue() {
 		if (this.store.isEmpty()) {
 			throw new RuntimeException("Queue Underflow");

@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.LinkedList;
 import java.util.Stack;
 
+@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
 public class BinaryNode<T> {
 
 	// the fields
@@ -119,7 +120,7 @@ public class BinaryNode<T> {
 
 	// print the tree elements in postorder // iterativeInorder
 	public void iterativePreOrder() {
-		Stack<BinaryNode<T>> s = new Stack();
+		Stack<BinaryNode<T>> s = new Stack<BinaryNode<T>>();
 		BinaryNode<T> current = this;
 		while (current != null || !s.empty()) {
 			if (current != null) {
@@ -193,7 +194,8 @@ public class BinaryNode<T> {
 		// now, the left node will check for its own left and right
 		node.setLeft(prePlusIn(newPre, newIn));
 		// right is all items to right of root
-		newPre = (T[]) Array.newInstance(pre[0].getClass(), pre.length - rLoc - 1);
+		newPre = (T[]) Array.newInstance(pre[0].getClass(), pre.length - rLoc
+				- 1);
 		newIn = (T[]) Array.newInstance(in[0].getClass(), in.length - rLoc - 1);
 		System.arraycopy(pre, rLoc + 1, newPre, 0, in.length - rLoc - 1);
 		System.arraycopy(in, rLoc + 1, newIn, 0, in.length - rLoc - 1);
@@ -224,7 +226,8 @@ public class BinaryNode<T> {
 			BinaryNode<T> tNode = work.peek();
 			// if there are left and right nodes, add them to work
 			// if previous is tNodes parent, then going down
-			if (previous == null || previous.getLeft() == tNode || previous.getRight() == tNode) {
+			if (previous == null || previous.getLeft() == tNode
+					|| previous.getRight() == tNode) {
 				// has left or right? add to stack
 				if (tNode.getLeft() != null) {
 					work.push(tNode.getLeft());
@@ -297,7 +300,8 @@ public class BinaryNode<T> {
 				out += list.get(x).getElement() + "  ";
 				// else, print on a new level
 			} else {
-				out += "\n" + level.get(x) + "\t" + list.get(x).getElement() + "  ";
+				out += "\n" + level.get(x) + "\t" + list.get(x).getElement()
+						+ "  ";
 				lastLevel++;
 			}
 		}
@@ -337,7 +341,8 @@ public class BinaryNode<T> {
 		// recursive
 		// create the new subtree and set as left of current node
 		node.setLeft(postPlusIn(newPost, newIn));
-		newPost = (T[]) Array.newInstance(post[0].getClass(), post.length - rLoc - 1);
+		newPost = (T[]) Array.newInstance(post[0].getClass(), post.length
+				- rLoc - 1);
 		newIn = (T[]) Array.newInstance(in[0].getClass(), in.length - rLoc - 1);
 		// everything to the right of root is in the right subtree
 		System.arraycopy(post, rLoc, newPost, 0, in.length - rLoc - 1);

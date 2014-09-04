@@ -1,4 +1,4 @@
-package datastructure;
+package dataStructures;
 
 public class Pair<F extends Comparable<F>, S extends Comparable<S>> implements
 		Comparable<Pair<F, S>> {

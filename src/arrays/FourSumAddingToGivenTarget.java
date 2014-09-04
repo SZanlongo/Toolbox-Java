@@ -6,7 +6,7 @@ import java.util.Collections;
 
 import utils.CreateUtils;
 import utils.PrintUtils;
-import datastructure.Pair;
+import dataStructures.Pair;
 
 /*
  * Given an array S of n integers, are there elements a, b, c, and d 

@@ -2,7 +2,7 @@ package arrays;
 
 import java.util.PriorityQueue;
 
-import datastructure.Pair;
+import dataStructures.Pair;
 
 public class FindKthSmallestInRowColSortedMatrix {
 

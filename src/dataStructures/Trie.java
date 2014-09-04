@@ -1,4 +1,4 @@
-package datastructure;
+package dataStructures;
 
 import utils.CreateUtils;
 import utils.PrintUtils;

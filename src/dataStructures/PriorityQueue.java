@@ -1,4 +1,4 @@
-package datastructure;
+package dataStructures;
 
 import java.util.AbstractQueue;
 import java.util.ArrayList;

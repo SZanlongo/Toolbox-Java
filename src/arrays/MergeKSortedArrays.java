@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 
 import utils.CreateUtils;
 import utils.PrintUtils;
-import datastructure.Pair;
+import dataStructures.Pair;
 
 public class MergeKSortedArrays {
 

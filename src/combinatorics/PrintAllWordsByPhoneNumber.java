@@ -10,7 +10,7 @@ import utils.CreateUtils;
  * For example 23 would generate 9 strings
  * ad,ae,af,bd,be,bf,cd,ce,cf
  */
-public class PringAllWordsByPhoneNumber {
+public class PrintAllWordsByPhoneNumber {
 
 	public static void print(char[] number, int start, String s, char[][] map) {
 		if (start == number.length) {
@@ -28,10 +28,9 @@ public class PringAllWordsByPhoneNumber {
 	}
 
 	public static void main(String[] args) {
-		char[][] map = new char[][] { {}, {}, { 'a', 'b', 'c' },
-				{ 'd', 'e', 'f' }, { 'g', 'h', 'i' }, { 'j', 'k', 'l' },
-				{ 'o', 'p', 'q' }, { 'r', 's', 't' }, { 'u', 'v', 'w' },
-				{ 'w', 'x', 'y', 'z' } };
+		char[][] map = new char[][] { {}, {}, { 'a', 'b', 'c' }, { 'd', 'e', 'f' },
+				{ 'g', 'h', 'i' }, { 'j', 'k', 'l' }, { 'o', 'p', 'q' }, { 'r', 's', 't' },
+				{ 'u', 'v', 'w' }, { 'w', 'x', 'y', 'z' } };
 		int[] a = CreateUtils.randNonNegIntArray(5, 10);
 		char[] number = new char[a.length];
 		for (int i = 0; i < number.length; i++)

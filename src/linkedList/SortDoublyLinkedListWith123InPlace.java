@@ -1,4 +1,4 @@
-package linkedlist;
+package linkedList;
 
 /* not tested yet */
 public class SortDoublyLinkedListWith123InPlace {

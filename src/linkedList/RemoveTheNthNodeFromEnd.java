@@ -1,4 +1,4 @@
-package linkedlist;
+package linkedList;
 
 /*
  * Given a linked list, remove the nth node from the 

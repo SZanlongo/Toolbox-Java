@@ -1,4 +1,4 @@
-package linkedlist;
+package linkedList;
 
 import java.util.Stack;
 
@@ -8,11 +8,11 @@ import utils.PrintUtils;
 public class ConvertBSTToSortedDoublyLinkedList {
 
 	// O(n)?
-	public static linkedlist.Node convert(tree.Node root) {
+	public static linkedList.Node convert(tree.Node root) {
 		if (root == null)
 			return null;
-		linkedlist.Node head = null;
-		linkedlist.Node prev = null;
+		linkedList.Node head = null;
+		linkedList.Node prev = null;
 		Stack<tree.Node> s = new Stack<tree.Node>();
 		tree.Node n = root;
 		while (!s.isEmpty() || n != null) {
@@ -21,7 +21,7 @@ public class ConvertBSTToSortedDoublyLinkedList {
 				n = n.left;
 			} else {
 				n = s.pop();
-				linkedlist.Node curr = new linkedlist.Node(n.value);
+				linkedList.Node curr = new linkedList.Node(n.value);
 				curr.prev = prev;
 				if (prev == null) {
 					head = curr;

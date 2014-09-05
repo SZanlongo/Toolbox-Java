@@ -1,4 +1,4 @@
-package linkedlist;
+package linkedList;
 
 public class Node implements Comparable<Node> {
 	public int value;

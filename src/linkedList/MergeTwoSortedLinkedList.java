@@ -1,4 +1,4 @@
-package linkedlist;
+package linkedList;
 
 import utils.CreateUtils;
 import utils.PrintUtils;

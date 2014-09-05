@@ -27,14 +27,14 @@ public class CreateUtils {
 		return root;
 	}
 
-	public static linkedlist.Node sortedLinkedListFromOneToN(int n) {
+	public static linkedList.Node sortedLinkedListFromOneToN(int n) {
 		if (n < 1)
 			return null;
-		linkedlist.Node head = new linkedlist.Node(1);
-		linkedlist.Node curr = head;
-		linkedlist.Node prev = null;
+		linkedList.Node head = new linkedList.Node(1);
+		linkedList.Node curr = head;
+		linkedList.Node prev = null;
 		for (int i = 2; i <= n; i++) {
-			curr.next = new linkedlist.Node(i);
+			curr.next = new linkedList.Node(i);
 			curr.prev = prev;
 			prev = curr;
 			curr = curr.next;
@@ -42,15 +42,15 @@ public class CreateUtils {
 		return head;
 	}
 
-	public static linkedlist.Node randNonNegLinkedList(int maxLength,
+	public static linkedList.Node randNonNegLinkedList(int maxLength,
 			int maxValue) {
 		int n = randNonNegInt(maxLength);
 		if (n == 0)
 			return null;
-		linkedlist.Node head = new linkedlist.Node(randNonNegInt(maxValue));
-		linkedlist.Node t = head;
+		linkedList.Node head = new linkedList.Node(randNonNegInt(maxValue));
+		linkedList.Node t = head;
 		for (int i = 1; i < n; i++) {
-			t.next = new linkedlist.Node(randNonNegInt(maxValue));
+			t.next = new linkedList.Node(randNonNegInt(maxValue));
 			t = t.next;
 		}
 		return head;

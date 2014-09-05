@@ -5,7 +5,7 @@ import graph.Vertex;
 import java.util.List;
 import java.util.Map;
 
-import linkedlist.Node;
+import linkedList.Node;
 import tree.LevelByLevelTraversal;
 
 public class PrintUtils {

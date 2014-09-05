@@ -1,5 +1,6 @@
 package string;
 
+@SuppressWarnings("unused")
 public class StringToIntToString {
 	public void intToString() {
 		String a = String.valueOf(2); // integer to numeric string

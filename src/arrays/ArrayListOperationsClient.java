@@ -1,10 +1,11 @@
 package arrays;
 
-import java.util.Random;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class ArrayListOperationsClient {
 
+	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
 		Random gen = new Random();
 

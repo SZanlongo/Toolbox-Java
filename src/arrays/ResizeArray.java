@@ -13,7 +13,7 @@ public class ResizeArray {
 	 */
 	private static Object resizeArray(Object oldArray, int newSize) {
 		int oldSize = java.lang.reflect.Array.getLength(oldArray);
-		Class elementType = oldArray.getClass().getComponentType();
+		Class<?> elementType = oldArray.getClass().getComponentType();
 		Object newArray = java.lang.reflect.Array.newInstance(elementType,
 				newSize);
 		int preserveLength = Math.min(oldSize, newSize);

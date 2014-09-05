@@ -3,6 +3,7 @@ package arrays;
 import java.util.ArrayList;
 import java.util.Random;
 
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class BubbleSort {
 	public static void main(String[] args) {
 

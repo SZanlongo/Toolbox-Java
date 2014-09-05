@@ -5,9 +5,10 @@ import java.util.ArrayList;
 //	in ascending order as determined by the compareTo() method of
 //	the class to which the elements belong.
 
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class OrderedList {
 
-	private ArrayList<Comparable> store;
+	private final ArrayList<Comparable> store;
 
 	// Constructor creates an empty list
 	public OrderedList() {
@@ -26,7 +27,8 @@ public class OrderedList {
 		// a) scanned through the entire list, or
 		// b) a BIGGER or EQUAL element is located
 		int index = 0;
-		while (index < this.store.size() && item.compareTo(this.store.get(index)) > 0) {
+		while (index < this.store.size()
+				&& item.compareTo(this.store.get(index)) > 0) {
 			index++;
 		}
 
@@ -43,13 +45,15 @@ public class OrderedList {
 		// To exploit the known ordering of the items in the store,
 		// scan until a BIGGER or EQUAL element is encountered
 		int index = 0;
-		while (index < this.store.size() && item.compareTo(this.store.get(index)) > 0) {
+		while (index < this.store.size()
+				&& item.compareTo(this.store.get(index)) > 0) {
 			index++;
 		}
 
 		// If the scan stopped because an EQUAL element is located, remove it
 		// otherwise (stopped on finding a BIGGER element) nothing to remove
-		if (index < this.store.size() && item.compareTo(this.store.get(index)) == 0) {
+		if (index < this.store.size()
+				&& item.compareTo(this.store.get(index)) == 0) {
 			this.store.remove(index);
 		}
 	}
@@ -84,6 +88,7 @@ public class OrderedList {
 		return false; // Search has failed
 	}
 
+	@Override
 	public String toString() {
 		String image = "";
 		int index = 0;

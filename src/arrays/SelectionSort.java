@@ -3,6 +3,7 @@ package arrays;
 import java.util.ArrayList;
 import java.util.Random;
 
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class SelectionSort {
 	public static void main(String[] args) {
 		ArrayList<Comparable> one = randomIntegerList(19);
@@ -36,7 +37,7 @@ public class SelectionSort {
 
 		Comparable firstItem = list.remove(0); // Select the first element
 		Comparable smallItem = selectMin(list);// Select the smallest of the
-												// rest
+		// rest
 
 		// Choose the smaller to these 2 elements
 		// remembering to replace the other one

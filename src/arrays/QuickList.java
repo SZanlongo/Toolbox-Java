@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class QuickList {
 
-	private ArrayList<String> store;
-	private String title;
+	private final ArrayList<String> store;
+	private final String title;
 
 	public QuickList(String title) {
 		this.title = title;
@@ -34,6 +34,7 @@ public class QuickList {
 		this.store.remove(item);
 	}
 
+	@SuppressWarnings("unused")
 	private int indexOf(String item) {
 		for (int i = 0; i < this.store.size(); i++) {
 			if (this.store.get(i).equalsIgnoreCase(item)) {
@@ -44,6 +45,7 @@ public class QuickList {
 		return -1;
 	}
 
+	@Override
 	public String toString() {
 		String image = "";
 		if (this.title != null) {

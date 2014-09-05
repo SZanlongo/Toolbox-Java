@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 import utils.CreateUtils;
 
+@SuppressWarnings("unchecked")
 public class HashTable<K, V> {
 
 	public class Pair<F, S> {
@@ -31,8 +32,9 @@ public class HashTable<K, V> {
 
 	public HashTable(int initCapacity) {
 		capacity = 1;
-		while (capacity < initCapacity)
+		while (capacity < initCapacity) {
 			capacity <<= 1;
+		}
 		resizeThreshold = (int) LOAD_FACTOR * capacity;
 		lists = new LinkedList[capacity];
 		for (int i = 0; i < lists.length; i++) {
@@ -42,21 +44,24 @@ public class HashTable<K, V> {
 	}
 
 	public V get(K key) {
-		if (key == null)
+		if (key == null) {
 			return null;
+		}
 		int hash = key.hashCode() % capacity;
 		Iterator<Pair<K, V>> iter = lists[hash].iterator();
 		while (iter.hasNext()) {
 			Pair<K, V> p = iter.next();
-			if (p.first == key)
+			if (p.first == key) {
 				return p.second;
+			}
 		}
 		return null;
 	}
 
 	public V put(K key, V value) {
-		if (key == null)
+		if (key == null) {
 			return null;
+		}
 		int hash = key.hashCode() % capacity;
 		V old = null;
 		Iterator<Pair<K, V>> iter = lists[hash].iterator();
@@ -76,8 +81,9 @@ public class HashTable<K, V> {
 	}
 
 	public boolean containsKey(K key) {
-		if (key == null)
+		if (key == null) {
 			return false;
+		}
 		int hash = key.hashCode() % capacity;
 		Iterator<Pair<K, V>> iter = lists[hash].iterator();
 		while (iter.hasNext()) {
@@ -94,15 +100,16 @@ public class HashTable<K, V> {
 	}
 
 	public void checkForResizing() {
-		if (size < resizeThreshold)
+		if (size < resizeThreshold) {
 			return;
+		}
 		capacity = capacity * 2;
 		LinkedList<Pair<K, V>>[] newLists = new LinkedList[capacity];
 		for (int i = 0; i < newLists.length; i++) {
 			newLists[i] = new LinkedList<Pair<K, V>>();
 		}
-		for (int i = 0; i < lists.length; i++) {
-			Iterator<Pair<K, V>> iter = lists[i].iterator();
+		for (LinkedList<Pair<K, V>> list : lists) {
+			Iterator<Pair<K, V>> iter = list.iterator();
 			while (iter.hasNext()) {
 				Pair<K, V> p = iter.next();
 				int hash = p.first.hashCode() % capacity;

@@ -3,6 +3,7 @@ package arrays;
 import java.util.ArrayList;
 import java.util.Random;
 
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class FindIntersection {
 	public static void main(String[] args) {
 

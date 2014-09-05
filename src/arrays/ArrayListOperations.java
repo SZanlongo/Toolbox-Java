@@ -2,8 +2,8 @@ package arrays;
 
 import java.util.ArrayList;
 
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class ArrayListOperations {
-
 	public static void insert(Comparable item, ArrayList<Comparable> list) {
 		if (list.isEmpty() || item.compareTo(list.get(0)) <= 0) {
 			list.add(0, item);

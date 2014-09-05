@@ -18,6 +18,7 @@ public class FindANumberWithinMostIntervals {
 		}
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static double findNumber(Interval[] intervals) {
 		double number = Double.NaN;
 		IntervalPoint[] points = new IntervalPoint[2 * intervals.length];
@@ -30,19 +31,19 @@ public class FindANumberWithinMostIntervals {
 			public int compare(Object o1, Object o2) {
 				IntervalPoint p1 = (IntervalPoint) o1;
 				IntervalPoint p2 = (IntervalPoint) o2;
-				if (p1.value == p2.value)
+				if (p1.value == p2.value) {
 					return 0;
-				else if (p1.value < p2.value)
+				} else if (p1.value < p2.value) {
 					return -1;
-				else
+				} else {
 					return 1;
+				}
 			}
 		});
 		int intersections = 0;
 		int maxIntersections = 0;
 		double begin = Double.MAX_VALUE;
-		for (int i = 0; i < points.length; i++) {
-			IntervalPoint p = points[i];
+		for (IntervalPoint p : points) {
 			if (p.isBegin) {
 				intersections++;
 				if (intersections > maxIntersections) {

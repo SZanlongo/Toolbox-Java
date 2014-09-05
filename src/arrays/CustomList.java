@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
+@SuppressWarnings("serial")
 public class CustomList extends ArrayList<Integer> {
 
 	// SOLUTION 1

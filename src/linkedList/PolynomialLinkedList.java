@@ -4,13 +4,14 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
+@SuppressWarnings("unused")
 class PolynomialLinkedList {
 
-	private LinkedList polynomial;
+	private LinkedList<Term> polynomial;
 
 	// create linkedlist
 
-	private String output(ListIterator out) {
+	private String output(ListIterator<Term> out) {
 		if (!out.hasNext()) {
 			return "";
 		}
@@ -20,7 +21,7 @@ class PolynomialLinkedList {
 	// helper for tostring
 	// it goes through the list and prints the values
 
-	private class Term {
+	public class Term {
 		// create terms
 
 		int coefficient;
@@ -76,7 +77,7 @@ class PolynomialLinkedList {
 
 	public void addTerm(int coefficient, int exponent) {
 		// add terms given coef and exp
-		ListIterator iterator = polynomial.listIterator();
+		ListIterator<Term> iterator = polynomial.listIterator();
 
 		if (polynomial.size() == 0) {
 			iterator.add(new Term(coefficient, exponent));
@@ -85,7 +86,7 @@ class PolynomialLinkedList {
 		// if 0, add the term
 
 		while (iterator.hasNext()) {
-			Term term1 = (Term) iterator.next();
+			Term term1 = iterator.next();
 			if (exponent == term1.exponent) {
 				iterator.set(new Term(coefficient + term1.coefficient, exponent));
 				return;
@@ -107,42 +108,46 @@ class PolynomialLinkedList {
 
 	public PolynomialLinkedList polyAdd(PolynomialLinkedList p) {
 		// add polynomials
-		ListIterator iterator1 = polynomial.listIterator();
+		ListIterator<Term> iterator1 = polynomial.listIterator();
 		Term term1;
-		ListIterator iterator2 = polynomial.listIterator();
+		ListIterator<Term> iterator2 = polynomial.listIterator();
 		Term term2;
 		PolynomialLinkedList addition = new PolynomialLinkedList();
 		// goes through list (both)
 		if (iterator1.hasNext()) {
 			while (iterator1.hasNext()) {
-				term1 = (Term) iterator1.next();
-				addition.polynomial.add(new Term(term1.coefficient, term1.exponent));
+				term1 = iterator1.next();
+				addition.polynomial.add(new Term(term1.coefficient,
+						term1.exponent));
 			}
 		}
 		if (iterator2.hasNext()) {
 			while (iterator2.hasNext()) {
-				term2 = (Term) iterator2.next();
-				addition.polynomial.add(new Term(term2.coefficient, term2.exponent));
+				term2 = iterator2.next();
+				addition.polynomial.add(new Term(term2.coefficient,
+						term2.exponent));
 			}
 		}
 		while ((iterator1.hasNext()) && (iterator2.hasNext())) {
-			term1 = (Term) iterator1.next();
+			term1 = iterator1.next();
 			iterator1.previous();
-			term2 = (Term) iterator2.next();
+			term2 = iterator2.next();
 			iterator2.previous();
 			if (term1.exponent == term2.exponent) {
 				// same exp, so add coefs and keep exp
-				addition.polynomial.add(new Term(term1.coefficient + term2.coefficient,
-						term1.exponent));
+				addition.polynomial.add(new Term(term1.coefficient
+						+ term2.coefficient, term1.exponent));
 				iterator1.next();
 				iterator2.next();
 			} // smaller coef, so add before the other
 			if (term1.exponent < term2.exponent) {
-				addition.polynomial.add(new Term(term1.coefficient, term2.exponent));
+				addition.polynomial.add(new Term(term1.coefficient,
+						term2.exponent));
 				iterator1.next();
 			} // larger, so add after
 			else {
-				addition.polynomial.add(new Term(term2.coefficient, term2.exponent));
+				addition.polynomial.add(new Term(term2.coefficient,
+						term2.exponent));
 				iterator2.next();
 			}
 		}
@@ -200,8 +205,8 @@ class PolynomialLinkedList {
 			while (iterator2.hasNext()) {
 				Term term2 = iterator2.next();
 				// actually multiplies them
-				multiplied.addTerm(term1.coefficient * term2.coefficient, term1.exponent
-						* term2.exponent);
+				multiplied.addTerm(term1.coefficient * term2.coefficient,
+						term1.exponent * term2.exponent);
 			}
 		}
 		return multiplied;
@@ -217,8 +222,9 @@ class PolynomialLinkedList {
 			return null;
 			// both empty, so return null
 		} else {
-			answer.next.data = new Term(poly1.next.data.coefficient * poly2.next.data.coefficient,
-					poly1.next.data.exponent + poly2.next.data.exponent);
+			answer.next.data = new Term(poly1.next.data.coefficient
+					* poly2.next.data.coefficient, poly1.next.data.exponent
+					+ poly2.next.data.exponent);
 			poly1 = poly1.next;
 			poly2 = poly2.next;
 			// multiply
@@ -231,7 +237,7 @@ class PolynomialLinkedList {
 	@Override
 	public String toString() {
 		// output answer using the helper method at top
-		ListIterator out = polynomial.listIterator();
+		ListIterator<Term> out = polynomial.listIterator();
 		return output(out);
 	}
 }

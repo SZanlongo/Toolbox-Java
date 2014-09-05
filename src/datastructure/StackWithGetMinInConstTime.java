@@ -5,7 +5,7 @@ import java.util.Stack;
 import utils.CreateUtils;
 
 public class StackWithGetMinInConstTime<T extends Comparable<T>> extends
-		Stack<T> {
+Stack<T> {
 	Stack<T> mins;
 
 	public StackWithGetMinInConstTime() {
@@ -17,16 +17,18 @@ public class StackWithGetMinInConstTime<T extends Comparable<T>> extends
 	public T push(T element) {
 		T top = isEmpty() ? null : peek();
 		super.push(element);
-		if (mins.isEmpty() || element.compareTo(mins.peek()) <= 0)
+		if (mins.isEmpty() || element.compareTo(mins.peek()) <= 0) {
 			mins.push(element);
+		}
 		return top;
 	}
 
 	@Override
 	public T pop() {
 		T top = super.pop();
-		if (top.compareTo(mins.peek()) == 0)
+		if (top.compareTo(mins.peek()) == 0) {
 			mins.pop();
+		}
 		return top;
 	}
 
@@ -36,7 +38,7 @@ public class StackWithGetMinInConstTime<T extends Comparable<T>> extends
 	}
 
 	public static void main(String[] args) {
-		StackWithGetMinInConstTime s = new StackWithGetMinInConstTime();
+		StackWithGetMinInConstTime<Integer> s = new StackWithGetMinInConstTime<Integer>();
 		for (int i = 0; i < 20; i++) {
 			if (Math.random() > 0.3) {
 				int n = CreateUtils.randNonNegInt(100);

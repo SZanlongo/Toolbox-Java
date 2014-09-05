@@ -6,7 +6,6 @@ import java.util.PriorityQueue;
 
 import utils.CreateUtils;
 import utils.PrintUtils;
-import datastructure.Pair;
 
 public class MergeSortedLinkedListsInPlace {
 
@@ -17,18 +16,22 @@ public class MergeSortedLinkedListsInPlace {
 		while (true) {
 			// keep doing the logic until all heads are null
 			boolean allHeadsNull = true;
-			for (Node h : heads)
-				if (h != null)
+			for (Node h : heads) {
+				if (h != null) {
 					allHeadsNull = false;
-			if (allHeadsNull)
+				}
+			}
+			if (allHeadsNull) {
 				break;
+			}
 
 			Node smallest = null;
 			int smallestHeadIndex = -1;
 			for (int i = 0; i < heads.length; i++) {
 				Node h = heads[i];
-				if (h == null)
+				if (h == null) {
 					continue;
+				}
 				if (smallest == null || h.value < smallest.value) {
 					smallest = h;
 					smallestHeadIndex = i;
@@ -37,11 +40,13 @@ public class MergeSortedLinkedListsInPlace {
 			// move the smallest head ahead
 			heads[smallestHeadIndex] = heads[smallestHeadIndex].next;
 			// first time
-			if (head == null)
+			if (head == null) {
 				head = smallest;
+			}
 			// after first time
-			if (iter != null)
+			if (iter != null) {
 				iter.next = smallest;
+			}
 			iter = smallest;
 			iter.next = null;
 		}
@@ -57,10 +62,11 @@ public class MergeSortedLinkedListsInPlace {
 		Node head = null, curr = null;
 		int finished = 0;
 		for (int i = 0; i < heads.size(); i++) {
-			if (heads.get(i) != null)
+			if (heads.get(i) != null) {
 				q.add(heads.get(i));
-			else
+			} else {
 				finished++;
+			}
 		}
 		while (finished < heads.size()) {
 			Node n = q.poll();

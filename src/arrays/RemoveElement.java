@@ -1,7 +1,5 @@
 package arrays;
 
-import java.util.Arrays;
-
 import utils.CreateUtils;
 import utils.PrintUtils;
 
@@ -15,8 +13,9 @@ public class RemoveElement {
 
 	// O(n)
 	public static int removeElement(int[] a, int elem) {
-		if (a.length == 0)
+		if (a.length == 0) {
 			return 0;
+		}
 		int fast = 0, slow = 0;
 		while (fast < a.length) {
 			int curr = a[fast];

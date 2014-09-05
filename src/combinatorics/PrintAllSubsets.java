@@ -19,8 +19,9 @@ public class PrintAllSubsets {
 			while (shift < s.length) {
 				// if the bit is 1, print
 				boolean print = ((n >> shift) & 1) == 1;
-				if (print)
+				if (print) {
 					System.out.print(s[shift]);
+				}
 				shift++;
 			}
 			System.out.println();
@@ -38,7 +39,7 @@ public class PrintAllSubsets {
 
 	public static void allSubsetsWithoutDuplicates(int[] s) {
 		Arrays.sort(s);
-		allSubsetsWithoutDuplicates(s, 0, new ArrayList());
+		allSubsetsWithoutDuplicates(s, 0, new ArrayList<Integer>());
 	}
 
 	public static void allSubsetsWithoutDuplicates(int[] s, int start,
@@ -61,12 +62,12 @@ public class PrintAllSubsets {
 
 	public static void allSubsetsWithoutOutputDuplicates(int[] s) {
 		Map<Integer, Integer> counts = new HashMap<Integer, Integer>();
-		for (int i = 0; i < s.length; i++) {
-			int key = s[i];
-			if (counts.containsKey(key))
+		for (int key : s) {
+			if (counts.containsKey(key)) {
 				counts.put(key, counts.get(key) + 1);
-			else
+			} else {
 				counts.put(key, 1);
+			}
 		}
 		allSubsetsWithoutOutputDuplicates(counts, 0, "");
 	}
@@ -83,8 +84,9 @@ public class PrintAllSubsets {
 					int count = e.getValue();
 					for (int i = 0; i <= count; i++) {
 						String t = "";
-						for (int j = 0; j < i; j++)
+						for (int j = 0; j < i; j++) {
 							t += value;
+						}
 						allSubsetsWithoutOutputDuplicates(counts, start + 1, s
 								+ t);
 					}
